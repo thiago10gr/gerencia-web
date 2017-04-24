@@ -1,0 +1,146 @@
+﻿@model Projeto.Web.Areas.AreaRestrita.Models.UsuarioViewModelPerfil
+
+@{
+    ViewBag.Title = "Perfil";
+    ViewBag.Titulo = "Meu Perfil";
+    Layout = "~/Areas/AreaRestrita/Views/Templates/Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+
+            <div class="row">
+
+                <br />
+
+                <div class="col-md-4">
+
+                    @Html.LabelFor(model => model.Nome)
+                    @Html.TextBoxFor(model => model.Nome,
+                     new
+                     {
+                         @class = "form-control",
+                         @placeholder = "Digite aqui"
+                     })
+
+                    <br />
+
+                    @Html.LabelFor(model => model.Email)
+                    @Html.TextBoxFor(model => model.Email,
+                     new
+                     {
+                         @class = "form-control",
+                         @placeholder = "Digite aqui"
+                     })
+
+                    <br />
+
+                    @Html.LabelFor(model => model.DataCadastro, "Data de Cadastro")
+                    @Html.TextBoxFor(model => model.DataCadastro,
+                     new
+                     {
+                         @class = "form-control",
+                         @readonly = "readonly"
+                     })
+
+                    <br />
+
+                    @Html.LabelFor(model => model.Telefone)
+                    @Html.TextBoxFor(model => model.Telefone,
+                     new
+                     {
+                         @class = "form-control fone",
+                         @placeholder = "Digite aqui"
+                     })
+
+                    <br />
+
+                    @Html.LabelFor(model => model.Celular)
+                    @Html.TextBoxFor(model => model.Celular,
+                     new
+                     {
+                         @class = "form-control fone",
+                         @placeholder = "Digite aqui"
+                     })
+
+                    <br />
+
+                </div>
+
+
+
+                <div class="col-md-4">
+
+
+                    @Html.LabelFor(model => model.Ativo)
+                    @Html.EnumDropDownListFor(model => model.Ativo,
+                     "- Escolha uma Opção -",
+                     new
+                     {
+                         @class = "form-control"
+                     })
+
+
+                    <br />
+
+
+                    @Html.LabelFor(model => model.Perfil)
+                    @Html.EnumDropDownListFor(model => model.Perfil,
+                     "- Escolha uma Opção -",
+                     new
+                     {
+                         @class = "form-control"
+                     })
+
+
+                    <br />
+
+
+                    @Html.LabelFor(model => model.IdGrupo)
+                    @Html.DropDownListFor(model => model.IdGrupo,
+                         Model.ListagemGrupos,
+                         "- Escolha uma Opção -",
+                         new
+                         {
+                             @class = "form-control"
+                         })
+                    
+                    <br />
+
+
+
+                    @Html.LabelFor(model => model.Senha)
+                    @Html.PasswordFor(model => model.Senha,
+                     new
+                     {
+                         @class = "form-control"
+                     })
+
+                    <br />
+
+                    @Html.LabelFor(model => model.ReSenha, "Repita a senha")
+                    @Html.PasswordFor(model => model.ReSenha,
+                     new
+                     {
+                         @class = "form-control"
+                     })
+
+                    <br />
+
+                 
+                    @Html.HiddenFor(model => model.IdUsuario)
+                    
+
+                </div>
+            </div>
+      
+
+        <br />
+
+        <div class="row">
+             <div class="col-md-4">
+                 <input type="submit" value="Salvar" class="btn btn-primary" />
+             </div>
+        </div>
+
+ }
