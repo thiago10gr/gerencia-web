@@ -16,11 +16,11 @@ namespace Projeto.Web.Areas.AreaRestrita.Security
        
 
   
-        public override string[] GetRolesForUser(string email)
+        public override string[] GetRolesForUser(string idUsuario)
         {
             UsuarioRepositorio rep = new UsuarioRepositorio();
 
-            Usuario u = rep.ObterPorEmail(email);
+            Usuario u = rep.ObterPorId(Int32.Parse(idUsuario));
 
             if(u == null)
             {

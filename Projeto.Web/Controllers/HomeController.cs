@@ -43,7 +43,7 @@ namespace Projeto.Web.Controllers
                     if (u != null)
                     {
                         //ticket de acesso do usuario 
-                        FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(model.EmailAcesso.ToUpper(), false, 5);
+                        FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(u.IdUsuario.ToString(), false, 5);
 
                         //criando um cookie para gravar o tiket do usuario
                         HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, FormsAuthentication.Encrypt(ticket));

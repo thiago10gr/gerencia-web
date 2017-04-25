@@ -50,7 +50,7 @@ namespace Projeto.Armazenamento.Mapeamentos
                 .HasColumnName("id_area")
                 .IsOptional();
                
-            HasRequired(p => p.Area) //Projeto tem uma Area
+            HasOptional(p => p.Area) //Projeto tem uma Area 
             .WithMany(a => a.Projetos) //Area tem muitos projetos
             .HasForeignKey(p => p.IdArea); //foreing key
 

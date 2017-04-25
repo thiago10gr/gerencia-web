@@ -34,7 +34,7 @@ namespace Projeto.Armazenamento.Mapeamentos
 
             Property(a => a.Documento)
                 .HasColumnName("documento")
-                .HasMaxLength(17)
+                .HasMaxLength(18)
                 .IsRequired()
                 .HasColumnAnnotation(IndexAnnotation.AnnotationName, //definindo a coluna documento como unica
                     new IndexAnnotation(
